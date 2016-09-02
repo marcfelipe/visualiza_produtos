@@ -1,0 +1,47 @@
+unit Uprincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DBXFirebird, Data.FMTBcd,
+  Vcl.Grids, Vcl.DBGrids, Data.DB, Data.SqlExpr, Vcl.StdCtrls, IBCustomDataSet,
+  IBTable, IBDatabase;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    IBTransaction1: TIBTransaction;
+    IBDatabase1: TIBDatabase;
+    IBTable1: TIBTable;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+IBDatabase1.Connected:=True;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+IBTable1.Active:=True;
+IBTransaction1.Active:=True;
+end;
+
+end.
